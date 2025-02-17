@@ -498,3 +498,48 @@
      grid-column: 1 / span 2;
    }
  }
+
+ .footer {
+  font-size: 12px;
+  /* background: #121212; */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.myProfile, .academy, .descProfile {
+  padding: 15px;
+  border-radius: 8px;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.myProfile ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.myProfile a {
+  color: #1DB954;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.myProfile a:hover {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}

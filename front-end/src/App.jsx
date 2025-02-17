@@ -1,5 +1,6 @@
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Artists from "./pages/Artists.jsx";
 import Artist from "./pages/Artist.jsx";
@@ -9,6 +10,17 @@ import Song from "./pages/Song.jsx";
 const App = () => {
   return (
     <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+};
+
+const AppContent = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  return (
+    <>
       <Header />
 
       <Routes>
@@ -18,7 +30,10 @@ const App = () => {
         <Route path="/songs" element={<Songs />} />
         <Route path="/song/:id" element={<Song />} />
       </Routes>
-    </BrowserRouter>
+
+      {/* Footer só aparece na página inicial */}
+      {isHomePage && <Footer />}
+    </>
   );
 };
 
